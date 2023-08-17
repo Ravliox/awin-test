@@ -1,0 +1,53 @@
+.user-form {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 15%;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    .mat-stepper-vertical, .mat-stepper-horizontal {
+        background-color: transparent;
+    }
+    ::ng-deep .mat-step-icon-selected {
+        background-color: #fff;
+        color: #000;
+    }
+
+    ::ng-deep .mat-horizontal-stepper-header {
+        pointer-events: none;
+    }
+    
+    ::ng-deep .mat-step-label-selected .mat-step-text-label { 
+        color: #fff;
+    }
+
+    ::ng-deep .mat-stepper-horizontal-line {
+        border-top-color: #fff;
+    }
+
+    ::ng-deep .mat-step-icon {
+        background-color: #d3d3d3;
+        color: gray;
+    }
+
+    ::ng-deep .mat-step-text-label {
+        color: gray;
+    }
+
+    .nav-buttons {
+        display: flex;
+        padding: 0 24px;
+        justify-content: space-between;
+
+        button {
+            background-color: #fff;
+
+        }
+    }
+
+    &-content {
+        margin-bottom: 3rem;
+    }
+}

@@ -1,0 +1,24 @@
+<div class="user-form">
+    <div class="user-form-content">
+        <app-profile *ngIf="currentStep === 1" [formGroup]="profileForm"></app-profile>
+        <app-additional-info *ngIf="currentStep === 2" [formGroup]="additionalInfoForm"></app-additional-info>
+        <app-confirm-submit *ngIf="currentStep === 3" [data]="userFormData$ | async"></app-confirm-submit>
+    </div>
+    <div class="user-form-stepper">
+        <div class="nav-buttons">
+            <button mat-button (click)="goBackwards()">Previous</button>
+            <button mat-button [disabled]="isNextDisabled()" (click)="goForward()">Next</button>
+        </div>
+        <mat-stepper linear #stepper>
+            <mat-step [completed]="currentStep! >= 1" editable="false">
+                <ng-template matStepLabel>Personal Info</ng-template>
+            </mat-step>
+            <mat-step [completed]="currentStep! >= 2" editable="false">
+                <ng-template matStepLabel>Expertise Info</ng-template>
+            </mat-step>
+            <mat-step [completed]="currentStep! >= 3" editable="false">
+                <ng-template matStepLabel>Confirm</ng-template>
+            </mat-step>
+        </mat-stepper>
+    </div>
+</div>

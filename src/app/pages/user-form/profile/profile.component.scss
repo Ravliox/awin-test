@@ -1,0 +1,15 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: auto;
+
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    textarea {
+        min-height: 5rem;
+    }
+}

@@ -1,0 +1,35 @@
+<form>
+    <h1> Please check the information is correct! </h1>
+    <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput readonly [value]="data.profileForm.firstName">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput readonly [value]="data.profileForm.lastName">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput readonly [value]="data.profileForm.email">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Bio</mat-label>
+        <input matInput readonly [value]="data.profileForm.bio">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Social Media Links</mat-label>
+        <div *ngFor="let link of data.additionalInfo.socialMediaLinks">
+            <input matInput readonly [value]="link">
+        </div>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Expertise</mat-label>
+        <input matInput readonly [value]="data.additionalInfo.expertise">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Areas of Interest</mat-label>
+        <div *ngFor="let link of data.additionalInfo.socialMediaLinks">
+            <input matInput readonly [value]="link">
+        </div>    
+    </mat-form-field>
+</form>

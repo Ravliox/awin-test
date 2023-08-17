@@ -1,0 +1,41 @@
+<form [formGroup]="formGroup" class="additional-info">
+  <h1>Tell us more about you!</h1>
+    <div class="social-media">
+      <div class="social-media-header">
+        <h2> Let's start with some socials! </h2>
+        <button mat-icon-button (click)="addControl()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+      <div class="social-media-inputs">
+        <ng-container formArrayName="socialMediaLinks">
+          <ng-container *ngFor="let socialMediaLink of socialMediaLinks.controls; let i = index;">
+            <div class="form-field-container">
+              <mat-form-field>
+                <mat-label>Social Media Links</mat-label>
+                <input matInput [formControl]="getFormControl(socialMediaLink)">
+              </mat-form-field>
+      
+              <button mat-icon-button  (click)="deleteControl(i)" [disabled]="socialMediaLinks.length < 2">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+
+          </ng-container>
+        </ng-container>
+      </div>
+      <h2> Tell us about your expertise! </h2>
+      <mat-form-field>
+        <mat-label>Expertise</mat-label>
+        <input matInput formControlName="expertise">
+      </mat-form-field>
+      <h2> Tell us about your interests! </h2>
+      <mat-form-field>
+        <mat-label>Areas of Interest</mat-label>
+        <mat-select formControlName="areasOfInterest" multiple>
+          <mat-option *ngFor="let areaOfInterest of areasOfInterest" [value]="areaOfInterest.value">{{areaOfInterest.label}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+</form>

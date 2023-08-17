@@ -1,0 +1,61 @@
+div#landing-page {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emphasis {
+    color: #D0342C;
+    font-weight: bold;
+}
+
+.landing-page {
+    &-content {
+        text-align: center;
+        padding: 0 15%;
+
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        h2 { 
+            font-size: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-top: 3rem;
+        }
+    }
+
+    &-cat-button {
+        height: 80px;
+        width: 200px;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        margin-top: 3rem;
+
+        .text-underline {
+            width: 0%;
+            height: 2px;
+            background-color: #000;
+            margin-top: 0.3rem;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.5s ease-out;
+        }
+
+    
+        &:hover{
+            .text-underline {
+                width: 100%;
+                transform: scaleX(1);
+            }
+        }
+    }
+}

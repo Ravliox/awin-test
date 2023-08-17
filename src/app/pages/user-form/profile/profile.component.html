@@ -1,0 +1,39 @@
+<form class="profile" *ngIf="formGroup" [formGroup]="formGroup!">
+    <h1>Let's start with some basic information!</h1>
+    <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName"
+               placeholder="First Name">
+        <mat-error *ngIf="formGroup!.get('firstName')?.hasError('required')">
+          First name is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName"
+               placeholder="Last Name">
+        <mat-error *ngIf="formGroup!.get('lastName')?.hasError('required')">
+          Last name is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email"
+               placeholder="Email">
+        <mat-error *ngIf="formGroup!.get('email')?.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="formGroup!.get('email')?.hasError('email')">
+            Email is <strong>invalid</strong>
+          </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Bio</mat-label>
+        <textarea matInput formControlName="bio"
+               placeholder="Tell us something about yourself!"
+               cdkTextareaAutosize
+               #autosize="cdkTextareaAutosize"
+               cdkAutosizeMinRows="1"
+               cdkAutosizeMaxRows="5"></textarea>
+    </mat-form-field>
+</form>
